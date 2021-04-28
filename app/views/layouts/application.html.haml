@@ -17,4 +17,14 @@
       .header_signup
         = link_to "新規会員", "#" , class: "header_signup_text"
     = yield
-    
+    .footer
+      .footer_left
+        .footer_left_visual
+          いつでも任せられる
+          %br
+          動画編集者をみつけよう
+      .footer_right
+        =link_to image_tag("icon/At the office-pana (1).png",class:"footer_right_icon"),"#"
+    .footer_form
+      =link_to image_tag("icon/IMG_3090.jpg",class:"footer_form_icon"),"#"
+
