@@ -81,6 +81,83 @@
     }
   }
 }
+.topintroduction{
+  text-align:center;
+  font-family: HiraginoSans-W6;
+  font-size: 40px;
+  color: #F8F267;
+  .subtitle{
+    &_big{
+      font-size: 55px;
+    }
+  }
+}
+.main_list{
+  text-align:center;
+  padding:20px 0;
+  margin: 20px 0;
+  .lists{
+    padding: 40px 28px;
+    margin: 16px 50px;
+    display: inline-block;
+    span{
+      font-family: HiraginoSans-W9;
+      font-size: 36px;
+      color: #FF0000;
+    }
+    h1{
+      font-family: HiraginoSans-W6;
+      font-size: 32px;
+      color: #000000;
+      float: right;
+      margin-top: 9px;
+    }
+    &_image{
+      width: 190px;
+      height: 120px;
+      margin:20px 0px;
+    }
+    p{
+      font-family: HiraMaruProN-W4;
+      font-size: 20px;
+      color: #000000;
+    }
+  }
+}
+.top_users{
+  margin: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  &_main{
+    font-family: HiraginoSans-W6;
+    font-size: 36px;
+    color: #000000;
+  }
+  &_sabu{
+    font-family: HiraginoSans-W6;
+    font-size: 14px;
+    color: #FF0000;
+    margin-top: 30px;
+  } 
+}
+.top_members{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  &_main{
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    &_image{
+      height: 200px;
+      width: 200px;
+    }
+    &_name{
+      font-family: HiraginoSans-W4;
+      font-size: 24px;
+      color: #000000;
+    }
+  }
+}
 // .container {
 //   width: 1170px;
 //   padding: 0 15px;
