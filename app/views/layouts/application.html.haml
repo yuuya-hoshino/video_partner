@@ -11,11 +11,11 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      = link_to image_tag("icon/IMG_3107.jpg", class:"header_logo"),"#"
+      = link_to image_tag("icon/IMG_3107.jpg", class:"header_logo"),home_top_path
       .header_login
-        = link_to "ログイン", "#" , class: "header_login_text"
+        = link_to "ログイン", new_user_session_path , class: "header_login_text"
       .header_signup
-        = link_to "新規会員", "#" , class: "header_signup_text"
+        = link_to "新規会員", new_user_registration_path , class: "header_signup_text"
     = yield
     .footer
       .footer_left
