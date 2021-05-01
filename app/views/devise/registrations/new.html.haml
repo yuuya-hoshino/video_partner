@@ -9,11 +9,11 @@
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email",class: 'field_box'
       .field
-        = f.label :password,'パスワード',class: 'field_text'
-        - if @minimum_password_length
-          %em
-            .field_text
-              (英数字８文字以上)
+        = f.label :password,'パスワード（英数字８文字以上）',class: 'field_text'
+        -# - if @minimum_password_length
+        -#   %em
+        -#     .field_text
+        -#       (英数字８文字以上)
         %br/
         = f.password_field :password, autocomplete: "new-password",class: 'field_box'
       .field
