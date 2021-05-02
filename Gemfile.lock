@@ -95,10 +95,27 @@ GEM
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
     erubi (1.10.0)
+    erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.15.0)
+    font-awesome-sass (5.13.0)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    haml (5.2.1)
+      temple (>= 0.8.0)
+      tilt
+    haml-rails (2.0.1)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6, < 6.0)
+      html2haml (>= 1.0.1)
+      railties (>= 5.1)
+    html2haml (2.2.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0, < 6)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -173,6 +190,8 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    ruby_parser (3.15.0)
+      sexp_processor (~> 4.9)
     rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -193,6 +212,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    sexp_processor (4.15.1)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -201,6 +221,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -244,6 +265,8 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  font-awesome-sass
+  haml-rails
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)

@@ -1,0 +1,22 @@
+.account
+  .account_main
+    %h2 ログイン
+    .account_main_line
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email, 'メールアドレス', class: 'field_text'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class: 'field_box'
+      .field
+        = f.label :password, 'パスワード（英数字８文字以上）',class: 'field_text'
+        %br/
+        = f.password_field :password, autocomplete: "current-password",class: 'field_box'
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me, class: 'field_check_box'
+          = f.label :remember_me, 'ログインしたままにする', class: 'field_maintain'
+      .actions
+        = f.submit "ログイン", class: 'actions_submit'
+    .account_have
+      = link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "account_have_got" 
+    = link_to "パスワードをお忘れの方はこちら", new_user_password_path, class: "account_have_forget" 
