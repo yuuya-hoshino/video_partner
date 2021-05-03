@@ -140,3 +140,76 @@
     }
   }
 }
+
+
+//  edit ユーザー編集ページ
+.edit_profile{
+  height: 1700px;
+  background-color: #FFFCE8;
+  &_main{
+    height: 1400px;
+    width: 1000px;
+    margin: 0 auto;
+    position:relative;
+     top: 100px;
+    padding-top: 70px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    &_name{
+      font-family: HiraginoSans-W6;
+      font-size: 48px;
+      color: #000000;
+      text-align: center;
+      margin: 30px 120px;
+    }
+    &_line{
+      border: 1px solid #979797;
+      margin: 0 auto;
+      margin: 30px 120px;
+    }
+    &_use{
+      font-family: HiraginoSans-W5;
+      font-size: 36px;
+      color: #000000;
+      margin: 30px 120px;
+      width: 200px;
+    }
+    &_user{
+      height: 60px;
+      width: 700px;
+      margin: 0 120px;
+      background: #FFFFFF;
+      border: 1px solid #979797;
+    }
+    &_icon{
+      height: 150px;
+      width: 700px;
+      margin: 0 120px;
+      background: #FFFCE8;
+      border: 1px solid #979797;
+    }
+    &_introduction{
+      height: 350px;
+      width: 700px;
+      margin: 0 120px;
+      background: #FFFCE8;
+      border: 1px solid #979797;
+    }
+    &_button{
+      background: #FF0000;
+      border: 1px solid #979797;
+      border-radius: 9px;
+      height: 100px;
+      width: 250px;
+      margin:  0 auto;  
+      display: block;
+      margin-top: 60px;
+      &_text{
+        font-family: HiraginoSans-W8;
+        font-size: 36px;
+        color: #FFFFFF;
+        text-align: center;
+      }
+    }
+  }
+}
