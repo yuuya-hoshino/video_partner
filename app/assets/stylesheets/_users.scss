@@ -144,10 +144,10 @@
 
 //  edit ユーザー編集ページ
 .edit_profile{
-  height: 1700px;
+  height: 1400px;
   background-color: #FFFCE8;
   &_main{
-    height: 1400px;
+    height: 1200px;
     width: 1000px;
     margin: 0 auto;
     position:relative;
@@ -189,7 +189,7 @@
       border: 1px solid #979797;
     }
     &_introduction{
-      height: 350px;
+      height: 230px;
       width: 700px;
       margin: 0 120px;
       background: #FFFCE8;
