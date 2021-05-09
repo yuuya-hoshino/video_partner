@@ -17,4 +17,4 @@
         .other_profile_edit
           = link_to "編集", edit_user_registration_path , class: "other_profile_edit_text"
         .other_profile_logout
-          = link_to "ログアウト", "#" , class: "other_profile_edit_text"
+          = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text"
