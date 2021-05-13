@@ -2,19 +2,24 @@
   .show_profile_main
     .show_profile_main_name
       ユーザー名
-    =link_to image_tag("icon/964.png",class:"show_profile_main_image")
+    = image_tag("icon/964.png",class:"show_profile_main_image")
     .show_profile_main_introduction
       .show_profile_main_introduction_name
-        ああああ
+        = @user.name
       .show_profile_main_introduction_line
       .show_profile_main_introduction_sentence
-        aaaaaaaaaaaa
+        = @user.introduction
       .show_profile_main_introduction_line
       .like_count
         イイね数　1
       .show_profile_main_introduction_line
-      .other_profile
-        .other_profile_edit
-          = link_to "編集", edit_user_registration_path , class: "other_profile_edit_text"
-        .other_profile_logout
-          = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text"
+      - if @user.id == current_user.id
+        .other_profile
+          .other_profile_edit
+            = link_to "編集",edit_user_path(@user.id), class: "other_profile_edit_text"
+          .other_profile_logout
+            = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text"
+      - else
+        .other_profile
+          .other_profile_edit
+            = link_to "イイね", "#", class: "other_profile_edit_text"
