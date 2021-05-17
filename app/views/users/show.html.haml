@@ -2,7 +2,10 @@
   .show_profile_main
     .show_profile_main_name
       ユーザー名
-    = image_tag("icon/964.png",class:"show_profile_main_image")
+    - if @user.image_name? 
+      = image_tag @user.image_name.url ,class:"show_profile_main_image"
+    - else 
+      = image_tag("icon/964.png",class:"show_profile_main_image")
     .show_profile_main_introduction
       .show_profile_main_introduction_name
         = @user.name
@@ -20,6 +23,16 @@
           .other_profile_logout
             = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text"
       - else
-        .other_profile
-          .other_profile_edit
-            = link_to "イイね", "#", class: "other_profile_edit_text"
+        - if current_user.following?(@user)
+          = form_with model: @relationship,url: relationship_path, method: :delete, remote: true  do |f|
+            .other_profile
+              = button_tag type: 'submit', class: 'other_profile_edit',id: "unfollow_form"  do
+                .other_profile_edit_text
+                  イイね
+        - else
+          = form_with model: @relationship, remote: true  do |f|
+            %div= hidden_field_tag :following_id, @user.id
+            .other_profile
+              = button_tag type: 'submit', class: 'other_profile_edit',id: "follow_form" do
+                .other_profile_edit_text2
+                  イイね

@@ -3,16 +3,16 @@
     .edit_profile_main_name
       プロフィール
     .edit_profile_main_line
-    = form_tag "/users/#{@user.id}/update" do
+    = form_with model: @user, url: user_path do |f| 
       .edit_profile_main_use
         ユーザー名
-      %input.edit_profile_main_user{name: "name", value: @user.name, type: "text"}
+      = f.text_field :name, name:"name", class:"edit_profile_main_user"
       .edit_profile_main_use
         アイコン
-      %input.edit_profile_main_icon{ type: "file" }
+      = f.file_field :image_name, name:"image_name", class:"edit_profile_main_icon"
       .edit_profile_main_use
         自己紹介
-      %input.edit_profile_main_introduction{name: "introduction", value: @user.introduction, type: "text" }
-      %button{:type => "submit", class:"edit_profile_main_button"}
-        .edit_profile_main_button_text
-          更新する
+      = f.text_area :introduction, name:"introduction", class:"edit_profile_main_introduction"
+      = f.submit class:"edit_profile_main_button" 
+      .edit_profile_main_button_text
+        更新する

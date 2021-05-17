@@ -49,7 +49,7 @@
       font-family: HiraginoSans-W7;
       font-size: 18px;
       color: #000000;
-      margin: 40px;
+      margin: 0 40px;
       height: 120px;
     }
   }
@@ -57,11 +57,11 @@
 
 // show ユーザー詳細ページ
 .show_profile{
-  height: 1500px;
+  height: 2000px;
   background-color: #FFFCE8;
   text-align: center;
   &_main{
-    height: 1200px;
+    height: 1800px;
     width: 1000px;
     margin: 0 auto;
     position:relative;
@@ -84,7 +84,7 @@
     &_introduction{
       background: #FFFFFF;
       border: 1px solid #979797;
-      height: 600px;
+      height: 1250px;
       width: 800px;
       margin: 0 auto;
       &_name{
@@ -104,6 +104,7 @@
         font-size: 24px;
         color: #000000;
         margin: 30px 0;
+        white-space: pre-wrap;
       }
       .like_count{
         font-family: HiraginoSans-W5;
@@ -125,7 +126,12 @@
           &_text{
             font-family: HiraginoSans-W6;
             font-size: 36px;
-            color: #FFFFFF;
+            color: yellow;
+          }
+          &_text2{
+            font-family: HiraginoSans-W6;
+            font-size: 36px;
+            color: white;
           }
         }
         &_logout{
