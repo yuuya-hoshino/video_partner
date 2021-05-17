@@ -2,8 +2,12 @@
   .index_profile_main
     .index_profile_main_user
       ユーザー
-    .index_profile_main_image
-      = image_tag("icon/964.png",class:"index_profile_main_image_icon")
+    - if @user.image_name? 
+      .index_profile_main_image
+        = image_tag @user.image_name.url ,class:"index_profile_main_image_icon"
+    - else 
+      .index_profile_main_image
+        = image_tag("icon/964.png",class:"index_profile_main_image_icon")
   .index_profile_introduction
     .index_profile_introduction_name
       = @user.name
@@ -17,7 +21,10 @@
 .top_members
   - @users.each do |user|
     = link_to user_path(user.id), class:"top_members_main" do
-      = image_tag("icon/964.png",class:"top_members_main_image")
+      - if user.image_name? 
+        = image_tag @user.image_name.url ,class:"top_members_main_image"
+      - else 
+        = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
 .top_users

@@ -34,8 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
 
       t.timestamps null: false
-      t.string :name,              null: false, default: ""
-      t.string :introduction,        length: { maximum: 140 } 
+      t.string :name,              null: false, default: "" ,length: { maximum: 10 } 
+      t.string :introduction,        length: { maximum: 100 } 
     end
 
     add_index :users, :email,                unique: true
