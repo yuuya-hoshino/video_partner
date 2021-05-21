@@ -14,14 +14,15 @@
         = @user.introduction
       .show_profile_main_introduction_line
       .like_count
-        イイね数　1
+        イイね数　
+        = @follower_count
       .show_profile_main_introduction_line
       - if @user.id == current_user.id
         .other_profile
           .other_profile_edit
-            = link_to "編集",edit_user_path(@user.id), class: "other_profile_edit_text"
+            = link_to "編集",edit_user_path(@user.id), class: "other_profile_edit_text2"
           .other_profile_logout
-            = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text"
+            = link_to "ログアウト", destroy_user_session_path , method: :delete , class: "other_profile_edit_text2"
       - else
         - if current_user.following?(@user)
           = form_with model: @relationship,url: relationship_path, method: :delete, remote: true  do |f|
@@ -31,7 +32,7 @@
                   イイね
         - else
           = form_with model: @relationship, remote: true  do |f|
-            %div= hidden_field_tag :following_id, @user.id
+            %div= hidden_field_tag :follower_id, @user.id
             .other_profile
               = button_tag type: 'submit', class: 'other_profile_edit',id: "follow_form" do
                 .other_profile_edit_text2
