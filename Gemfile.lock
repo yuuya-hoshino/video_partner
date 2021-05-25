@@ -62,8 +62,13 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+<<<<<<< HEAD
     autoprefixer-rails (10.2.5.1)
       execjs (> 0)
+=======
+    autoprefixer-rails (10.2.5.0)
+      execjs (< 2.8.0)
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.5)
@@ -104,8 +109,13 @@ GEM
     devise-i18n-views (0.3.7)
     erubi (1.10.0)
     erubis (2.7.0)
+<<<<<<< HEAD
     execjs (2.8.1)
     ffi (1.15.1)
+=======
+    execjs (2.7.0)
+    ffi (1.15.0)
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -147,13 +157,20 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.0.3)
+<<<<<<< HEAD
     mini_portile2 (2.5.1)
+=======
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
     minitest (5.14.4)
     msgpack (1.4.2)
     mysql2 (0.5.3)
     nio4r (2.5.7)
+<<<<<<< HEAD
     nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
+=======
+    nokogiri (1.11.5-x86_64-darwin)
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
       racc (~> 1.4)
     nokogiri (1.11.5-x86_64-darwin)
       racc (~> 1.4)
@@ -161,7 +178,11 @@ GEM
     pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
+<<<<<<< HEAD
     puma (5.3.2)
+=======
+    puma (5.3.1)
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -274,7 +295,10 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+<<<<<<< HEAD
   ruby
+=======
+>>>>>>> a2c9fe7f401e417fe8e5f7c5244a8b1d4f4f1080
   x86_64-darwin-19
 
 DEPENDENCIES
