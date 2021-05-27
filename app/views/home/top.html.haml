@@ -51,15 +51,23 @@
     =link_to "もっと見る→",new_user_session_path, class:"top_users_sabu"
   - else
     =link_to "もっと見る→" ,"#", class:"top_users_sabu"
-.top_members
-  - @users.each do |user|
-    - if user_signed_in?
+- if user_signed_in?
+  .top_members
+    - @users.each do |user|
       = link_to user_path(user.id), class:"top_members_main" do
-        = image_tag("icon/964.png",class:"top_members_main_image")
+        - if user.image_name? 
+          = image_tag user.image_name.url ,class:"top_members_main_image"
+        - else 
+          = image_tag("icon/964.png",class:"top_members_main_image")
         .top_members_main_name
           = user.name
-    - else
+- else
+  .top_members
+    - @users.each do |user|
       = link_to new_user_session_path, class:"top_members_main" do
-        = image_tag("icon/964.png",class:"top_members_main_image")
+        - if user.image_name? 
+          = image_tag user.image_name.url ,class:"top_members_main_image"
+        - else 
+          = image_tag("icon/964.png",class:"top_members_main_image")
         .top_members_main_name
           = user.name
