@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
-    @follower_count = Relationship.where(follower_id: @follower_id).count
+    @follower_count = Relationship.where(follower_id: current_user.id).count
   end
 
   def edit
