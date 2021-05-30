@@ -57,17 +57,21 @@
 #   encoding: unicode
 #   pool: 5
 default: &default
-  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  encoding: unicode
 development:
   <<: *default
+  adapter: mysql2
   database: video_partner_development
+  encoding: utf8mb4
 test:
   <<: *default
+  adapter: mysql2
   database: video_partner_test
+  encoding: utf8mb4
 production:
   <<: *default
+  adapter: postgresql
   database: video_partner
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  encoding: unicode
