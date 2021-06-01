@@ -1,0 +1,9 @@
+.top_members
+  - @users.each do |user|
+    = link_to user_path(user.id), class:"top_members_main" do
+      - if user.image_name? 
+        = image_tag user.image_name.url ,class:"top_members_main_image"
+      - else 
+        = image_tag("icon/964.png",class:"top_members_main_image")
+      .top_members_main_name
+        = user.name

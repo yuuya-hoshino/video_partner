@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'members/index'
   get "/" => "home#top"
   devise_for :users, controllers: {registrations: 'users/registrations'}
   resources :users, only: [:index, :show, :edit, :update]

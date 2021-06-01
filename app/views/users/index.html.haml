@@ -17,7 +17,7 @@
 .top_users
   .top_users_main
     最新ユーザー
-  =link_to "もっと見る→","#", class:"top_users_sabu"
+  =link_to "もっと見る→",members_index_path, class:"top_users_sabu"
 .top_members
   - @users.each do |user|
     = link_to user_path(user.id), class:"top_members_main" do

@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @users_liked_from_me = User.where(id: following).limit(5)
   end
 
-
-
   def show
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
