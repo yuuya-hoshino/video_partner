@@ -1,3 +1,8 @@
+= form_with url: members_index_path, method: :get, local: true do |f| 
+  = text_field_tag :search, "",placeholder:"キーワード検索"
+  = submit_tag '検索', :name => nil
+.top_users
+  .top_users_main
 .top_members
   - @users.each do |user|
     = link_to user_path(user.id), class:"top_members_main" do
@@ -7,3 +12,7 @@
         = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
+      .top_members_main_name
+        イイね数　
+        = @follower_count[user.id]
+!= pagy_nav(@pagy)
