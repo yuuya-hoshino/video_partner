@@ -63,7 +63,7 @@
           = user.name
         .top_members_main_name
           イイね数　
-          = @follower_count
+          = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
 - else
   .top_members
     - @users.each do |user|
