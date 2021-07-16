@@ -37,3 +37,9 @@
               = button_tag type: 'submit', class: 'other_profile_edit',id: "follow_form" do
                 .other_profile_edit_text2
                   イイね
+      .show_profile_main_introduction_line
+      - if current_user.following?(@user) && @user.following?(current_user)
+        .show_profile_main_introduction_sentence
+          連絡先
+          = @user.email
+        .show_profile_main_introduction_line

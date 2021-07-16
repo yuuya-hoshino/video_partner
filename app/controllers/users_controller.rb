@@ -6,12 +6,13 @@ class UsersController < ApplicationController
     @matching_users = User.where(id: follower & following).limit(5)
     @users_liked_to_me = User.where(id: follower).limit(5)
     @users_liked_from_me = User.where(id: following).limit(5)
+    @follower_count = Relationship.group(:follower_id).count(:following_id)
   end
 
   def show
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
-    @follower_count = Relationship.where(follower_id: current_user.id).count
+    @follower_count = Relationship.where(follower_id: @user.id).count
   end
 
   def edit

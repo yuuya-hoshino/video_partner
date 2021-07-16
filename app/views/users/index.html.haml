@@ -27,6 +27,9 @@
         = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
+      .top_members_main_name
+        イイね数　
+        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
 .top_users
   .top_users_main
     マッチング中
@@ -40,6 +43,9 @@
         = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
+      .top_members_main_name
+        イイね数　
+        = @follower_count[user.id]
 .top_users
   .top_users_main
     相手からのイイね
@@ -53,6 +59,9 @@
         = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
+      .top_members_main_name
+        イイね数　
+        = @follower_count[user.id]
 .top_users
   .top_users_main
     イイねしてるユーザー
@@ -66,3 +75,6 @@
         = image_tag("icon/964.png",class:"top_members_main_image")
       .top_members_main_name
         = user.name
+      .top_members_main_name
+        イイね数　
+        = @follower_count[user.id]
