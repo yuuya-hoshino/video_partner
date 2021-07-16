@@ -156,17 +156,22 @@
 }
 .top_members{
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  width: 100%;
   &_main{
+    margin: 1%;
     background: #FFFFFF;
     border: 1px solid #979797;
+    width: calc(90%*1/5);
+    margin-bottom: 20px;
+    height: fit-content;
     &_image{
-      height: 200px;
+      height: 200px; 
       width: 200px;
       border: 30px solid white;
-      border-radius:50%;
-	    object-position:-20px 0px;
+      border-radius: 50%;
+      -o-object-position: -20px 0px;
+      object-position: -20px 0px;
     }
     &_name{
       font-family: HiraginoSans-W4;
