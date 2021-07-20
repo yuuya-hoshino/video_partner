@@ -14,5 +14,5 @@
         = user.name
       .top_members_main_name
         イイね数　
-        = @follower_count[user.id]
+        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
 != pagy_nav(@pagy)

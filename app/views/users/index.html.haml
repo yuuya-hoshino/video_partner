@@ -45,7 +45,7 @@
         = user.name
       .top_members_main_name
         イイね数　
-        = @follower_count[user.id]
+        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
 .top_users
   .top_users_main
     相手からのイイね
@@ -61,7 +61,7 @@
         = user.name
       .top_members_main_name
         イイね数　
-        = @follower_count[user.id]
+        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
 .top_users
   .top_users_main
     イイねしてるユーザー
@@ -77,4 +77,4 @@
         = user.name
       .top_members_main_name
         イイね数　
-        = @follower_count[user.id]
+        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
