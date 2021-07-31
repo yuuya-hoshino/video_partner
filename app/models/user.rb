@@ -30,4 +30,7 @@ class User < ApplicationRecord
   def matchers
     followings & followers
   end
+#ジャンル
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :genre
 end
