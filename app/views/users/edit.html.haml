@@ -12,7 +12,7 @@
       = f.file_field :image_name, name:"image_name", value:"ねこ2.jpg", class:"edit_profile_main_icon"
       .edit_profile_main_use
         ジャンル
-      = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '選択してください'}
+      = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
         自己紹介
       = f.text_area :introduction, name:"introduction", class:"edit_profile_main_introduction"
