@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   private
   def user_params
     # params.permit(:name, :introduction,:image_name,:genre_id)
-    params.require(:user).permit(:name, :introduction,:image_name,:genre_id)
+    params.require(:user).permit(:name, :introduction,:image_name,:genre_id,:role_id)
   end
 
   def logout
