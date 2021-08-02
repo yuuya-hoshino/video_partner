@@ -14,8 +14,11 @@
         自分の役割
       = f.collection_select :role_id, Role.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
-        ジャンル
+        動画の種類
       = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
+      .edit_profile_main_use
+        ジャンル
+      = f.collection_select :subgenre_id, Subgenre.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
         自己紹介
       = f.text_area :introduction, name:"introduction", class:"edit_profile_main_introduction"
