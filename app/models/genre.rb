@@ -1,9 +1,12 @@
 class Genre < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '0~1年' },
-    { id: 3, name: '1~5年' },
-    { id: 4, name: '5~10年' },
-    { id: 5, name: '10年以上' }
+    { id: 1, name: 'YouTube' },
+    { id: 2, name: 'ニコニコ動画' },
+    { id: 3, name: 'TikTok' },
+    { id: 4, name: 'イチナナ' },
+    { id: 5, name: 'ツイキャス' },
+    { id: 6, name: 'その他' }
   ]
+  include ActiveHash::Associations
+  has_many :user
 end

@@ -33,4 +33,6 @@ class User < ApplicationRecord
 #ジャンル
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
+  belongs_to_active_hash :role
+  belongs_to_active_hash :subgenre
 end

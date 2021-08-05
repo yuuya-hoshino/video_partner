@@ -12,6 +12,18 @@
       .show_profile_main_introduction_line
       .show_profile_main_introduction_sentence
         = @user.introduction
+      - if @user.role_id? 
+        .show_profile_main_introduction_line
+        .like_count
+          = @user.role.name
+      - if @user.genre_id? 
+        .show_profile_main_introduction_line
+        .like_count
+          = @user.genre.name
+      - if @user.subgenre_id? 
+        .show_profile_main_introduction_line
+        .like_count
+          = @user.subgenre.name
       .show_profile_main_introduction_line
       .like_count
         イイね数　
