@@ -21,4 +21,6 @@ class Subgenre < ActiveHash::Base
     { id: 19, name: 'ファッション' },
     { id: 20, name: 'その他' }
   ]
+  include ActiveHash::Associations
+  has_many :user
 end

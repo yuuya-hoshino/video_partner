@@ -5,4 +5,6 @@ class Role < ActiveHash::Base
     { id: 3, name: 'ディレクター' },
     { id: 4, name: '指導・レクチャー' }
   ]
+  include ActiveHash::Associations
+  has_many :user
 end

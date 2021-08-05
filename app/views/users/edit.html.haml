@@ -14,7 +14,7 @@
         自分の役割
       = f.collection_select :role_id, Role.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
-        動画の種類
+        動画のサイト
       = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
         ジャンル

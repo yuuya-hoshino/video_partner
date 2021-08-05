@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
     @follower_count = Relationship.where(follower_id: @user.id).count
-    @role = Role.find_by(role_id: params[:id])
-    @genre = Genre.find_by(genre_id: params[:id])
-    @subgenre = Subgenre.find_by(subgenre_id: params[:id])
+    # @role = Role.find_by(role_id: params[:id])
+    # @genre = Genre.find_by(genre_id: params[:id])
+    # @subgenre = Subgenre.find_by(subgenre_id: params[:id])
   end
 
   def edit

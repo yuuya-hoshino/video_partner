@@ -61,12 +61,15 @@
           = image_tag("icon/964.png",class:"top_members_main_image")
         .top_members_main_name
           = user.name
-        .top_members_main_name
-          = user.role_id
-        .top_members_main_name
-          = user.genre_id
-        .top_members_main_name
-          = user.subgenre_id
+        - if user.role_id? 
+          .top_members_main_name
+            = user.role.name
+        - if user.genre_id? 
+          .top_members_main_name
+            = user.genre.name
+        - if user.subgenre_id?
+          .top_members_main_name
+            = user.subgenre.name
         .top_members_main_name
           イイね数　
           = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
@@ -80,3 +83,12 @@
           = image_tag("icon/964.png",class:"top_members_main_image")
         .top_members_main_name
           = user.name
+        - if user.role_id? 
+          .top_members_main_name
+            = user.role.name
+        - if user.genre_id? 
+          .top_members_main_name
+            = user.genre.name
+        - if user.subgenre_id?
+          .top_members_main_name
+            = user.subgenre.name
