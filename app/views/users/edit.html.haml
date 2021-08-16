@@ -3,13 +3,13 @@
     .edit_profile_main_name
       プロフィール
     .edit_profile_main_line
-    = form_with model: @user, url: user_path do |f| 
+    = form_with model: @user, url: user_path do |f|  
       .edit_profile_main_use
         ユーザー名
-      = f.text_field :name, name:"name", class:"edit_profile_main_user"
+      = f.text_field :name, class:"edit_profile_main_user"
       .edit_profile_main_use
         アイコン
-      = f.file_field :image_name, name:"image_name", value:"ねこ2.jpg", class:"edit_profile_main_icon"
+      = f.file_field :image_name, value:"ねこ2.jpg", class:"edit_profile_main_icon"
       .edit_profile_main_use
         自分の役割
       = f.collection_select :role_id, Role.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
@@ -20,6 +20,9 @@
         ジャンル
       = f.collection_select :subgenre_id, Subgenre.all, :id, :name, {include_blank: '選択してください'}, class:"edit_profile_main_genre"
       .edit_profile_main_use
+        金額
+      = f.text_field :money, type:"number", class:"edit_profile_main_genre"
+      .edit_profile_main_use
         自己紹介
-      = f.text_area :introduction, name:"introduction", class:"edit_profile_main_introduction"
+      = f.text_area :introduction, class:"edit_profile_main_introduction"
       = f.submit "更新する", class:"edit_profile_main_button" 

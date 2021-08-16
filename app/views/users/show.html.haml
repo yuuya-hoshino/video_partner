@@ -24,6 +24,11 @@
         .show_profile_main_introduction_line
         .like_count
           = @user.subgenre.name
+      - if @user.money? 
+        .show_profile_main_introduction_line
+        .like_count
+          = @user.money
+          円
       .show_profile_main_introduction_line
       .like_count
         イイね数　

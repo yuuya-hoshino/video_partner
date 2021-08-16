@@ -18,99 +18,19 @@
   .top_users_main
     最新ユーザー
   =link_to "もっと見る→",members_index_path, class:"top_users_sabu"
-.top_members
-  - @users.each do |user|
-    = link_to user_path(user.id), class:"top_members_main" do
-      - if user.image_name? 
-        = image_tag user.image_name.url ,class:"top_members_main_image"
-      - else 
-        = image_tag("icon/964.png",class:"top_members_main_image")
-      .top_members_main_name
-        = user.name
-      - if user.role_id? 
-        .top_members_main_name
-          = user.role.name
-      - if user.genre_id? 
-        .top_members_main_name
-          = user.genre.name
-      - if user.subgenre_id?
-        .top_members_main_name
-          = user.subgenre.name
-      .top_members_main_name
-        イイね数　
-        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
+= render partial: 'users/users', locals: {members: @users}
 .top_users
   .top_users_main
     マッチング中
   =link_to "もっと見る→","#", class:"top_users_sabu"
-.top_members
-  - @matching_users.each do |user|
-    = link_to user_path(user.id), class:"top_members_main" do
-      - if user.image_name? 
-        = image_tag user.image_name.url ,class:"top_members_main_image"
-      - else 
-        = image_tag("icon/964.png",class:"top_members_main_image")
-      .top_members_main_name
-        = user.name
-      - if user.role_id? 
-        .top_members_main_name
-          = user.role.name
-      - if user.genre_id? 
-        .top_members_main_name
-          = user.genre.name
-      - if user.subgenre_id?
-        .top_members_main_name
-          = user.subgenre.name
-      .top_members_main_name
-        イイね数　
-        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
+= render partial: 'users/users', locals: {members: @matching_users}
 .top_users
   .top_users_main
     相手からのイイね
   =link_to "もっと見る→","#", class:"top_users_sabu"
-.top_members
-  - @users_liked_to_me.each do |user|
-    = link_to user_path(user.id), class:"top_members_main" do
-      - if user.image_name? 
-        = image_tag user.image_name.url ,class:"top_members_main_image"
-      - else 
-        = image_tag("icon/964.png",class:"top_members_main_image")
-      .top_members_main_name
-        = user.name
-      - if user.role_id? 
-        .top_members_main_name
-          = user.role.name
-      - if user.genre_id? 
-        .top_members_main_name
-          = user.genre.name
-      - if user.subgenre_id?
-        .top_members_main_name
-          = user.subgenre.name
-      .top_members_main_name
-        イイね数　
-        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
+= render partial: 'users/users', locals: {members: @users_liked_to_me}
 .top_users
   .top_users_main
     イイねしてるユーザー
   =link_to "もっと見る→","#", class:"top_users_sabu"
-.top_members
-  - @users_liked_from_me.each do |user|
-    = link_to user_path(user.id), class:"top_members_main" do
-      - if user.image_name? 
-        = image_tag user.image_name.url ,class:"top_members_main_image"
-      - else 
-        = image_tag("icon/964.png",class:"top_members_main_image")
-      .top_members_main_name
-        = user.name
-      - if user.role_id? 
-        .top_members_main_name
-          = user.role.name
-      - if user.genre_id? 
-        .top_members_main_name
-          = user.genre.name
-      - if user.subgenre_id?
-        .top_members_main_name
-          = user.subgenre.name
-      .top_members_main_name
-        イイね数　
-        = @follower_count[user.id] == nil ? 0 : @follower_count[user.id]
+= render partial: 'users/users', locals: {members: @users_liked_from_me}

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   mount_uploader :image_name, ImageUploader
   validates :name, presence: true, length: { maximum: 10 }
   validates :introduction, length: { maximum: 100 }
+  validates :money, numericality: { greater_than_or_equal_to: 1000, less_than_or_equal_to: 100000 }
 
   has_many :following_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followings, through: :following_relationships
