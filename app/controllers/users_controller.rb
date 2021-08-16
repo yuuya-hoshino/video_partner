@@ -13,16 +13,11 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
     @follower_count = Relationship.where(follower_id: @user.id).count
-    # @role = Role.find_by(role_id: params[:id])
-    # @genre = Genre.find_by(genre_id: params[:id])
-    # @subgenre = Subgenre.find_by(subgenre_id: params[:id])
   end
 
   def edit
     @user = User.find_by(id: params[:id])
-    if @user == current_user
-      render "edit"
-    else
+    if @user != current_user
       redirect_to users_path
     end
 
@@ -39,8 +34,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    # params.permit(:name, :introduction,:image_name,:genre_id)
-    params.require(:user).permit(:name, :introduction,:image_name,:genre_id,:role_id,:subgenre_id)
+    params.require(:user).permit(:genre_id, :role_id, :subgenre_id, :name, :introduction, :image_name, :money)
   end
 
   def logout
