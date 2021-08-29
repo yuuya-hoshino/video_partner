@@ -12,8 +12,21 @@
     .index_profile_introduction_name
       = current_user.name
     .index_profile_introduction_line
-    .index_profile_introduction_sentence
+    .index_profile_introduction_sentence_new
       = current_user.introduction
+    .index_profile_introduction_sentence
+      自分の役割:
+      = current_user.role.name
+    .index_profile_introduction_sentence
+      動画のサイト:
+      = current_user.genre.name
+    .index_profile_introduction_sentence
+      ジャンル:
+      = current_user.subgenre.name
+    .index_profile_introduction_sentence
+      金額:
+      = current_user.money
+      円
 .top_users
   .top_users_main
     最新ユーザー

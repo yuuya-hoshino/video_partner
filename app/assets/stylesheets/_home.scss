@@ -22,6 +22,9 @@
       justify-content: center;
       align-items: center;
       margin: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
   &_signup{
@@ -63,6 +66,8 @@
   padding: 40px 200px;
   .top_left{
     float: left;
+    overflow: hidden;
+    width: 400px;
     .top_visual{
       font-family: HiraginoSans-W6;
       font-size: 36px;
@@ -73,6 +78,12 @@
       font-size: 14px;
       color: #000000;
       padding: 20px 0px;
+      white-space: nowrap;
+      animation   : scroll 15s ease-out infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0)}
+      100% { transform: translateX(-100%)}
     }
     .btn-wrapper{
       background: #000000;
@@ -103,6 +114,7 @@
   .subtitle{
     &_big{
       font-size: 55px;
+      color: red;
     }
   }
 }
@@ -153,13 +165,18 @@
     color: #FF0000;
     margin-top: 30px;
   } 
+  &_next{
+    font-family: HiraginoSans-W6;
+    font-size: 14px;
+    color: #FF0000;
+  }
 }
 .top_members{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   &_main{
-    margin: 1%;
+    margin: 20px;
     background: #FFFFFF;
     border: 1px solid #979797;
     width: calc(90%*1/5);
@@ -177,6 +194,38 @@
       font-family: HiraginoSans-W4;
       font-size: 24px;
       color: #000000;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      &_none{
+        display: none;
+        overflow  : hidden;
+        &_introduction{
+          animation   : scroll 15s ease-out infinite;
+          display: none;
+        }
+        @keyframes scroll {
+          0% { transform: translateX(0)}
+        100% { transform: translateX(-100%)}
+        }
+      }
+    }
+    &_block{
+      display: block;
+    }
+  }
+  .slick-next{
+    right: 50px;
+    top: -15px;
+    &:before{
+      color: red;
+    }
+  }
+  .slick-prev{
+    left: 25px;
+    top: -15px;
+    &:before{
+      color: red;
     }
   }
 }
