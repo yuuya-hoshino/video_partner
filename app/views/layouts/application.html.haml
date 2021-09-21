@@ -24,8 +24,8 @@
                 = link_to "マイメニュー", user_path(current_user.id),class: "nav-name"
               %li.nav-item
                 = link_to "ユーザー一覧", users_path , class: "nav-name"
-              %li.nav-item
-                = link_to "ログアウト", destroy_user_session_path , class: "nav-name"
+              -# %li.nav-item
+              -#   = link_to "ログアウト", destroy_user_session_path , class: "nav-name"
           - else
             %ul.nav-list
               %li.nav-item
