@@ -16,16 +16,27 @@
   %body
     .header
       = link_to image_tag("icon/IMG_3107.jpg", class:"header_logo"),"/"
-      -if user_signed_in?
-        .header_login
-          = link_to current_user.name, user_path(current_user.id) , class: "header_login_text"
-        .header_index
-          = link_to "ユーザー一覧", users_path , class: "header_signup_text"
-      - else
-        .header_login
-          = link_to "ログイン", new_user_session_path , class: "header_login_text"
-        .header_signup
-          = link_to "新規会員", new_user_registration_path , class: "header_signup_text"
+      .nav-wrapper
+        %nav.header-nav
+          -if user_signed_in?
+            %ul.nav-list
+              %li.nav-item
+                = link_to "マイメニュー", user_path(current_user.id),class: "nav-name"
+              %li.nav-item
+                = link_to "ユーザー一覧", users_path , class: "nav-name"
+              %li.nav-item
+                = link_to "ログアウト", destroy_user_session_path , class: "nav-name"
+          - else
+            %ul.nav-list
+              %li.nav-item
+                = link_to "ログイン", new_user_session_path,class: "nav-name"
+              %li.nav-item
+                = link_to "新規会員", new_user_registration_path , class: "nav-name"
+      .burger-btn
+        %span.bar.bar_top
+        %span.bar.bar_mid
+        %span.bar.bar_bottom
+        
     = yield
     .footer
       .footer_left

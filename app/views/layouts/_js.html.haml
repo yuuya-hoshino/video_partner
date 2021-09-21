@@ -28,6 +28,11 @@
       slidesToScroll: 5,
     });
   });
+  $('.burger-btn').on('click',function(){
+    $('.burger-btn').toggleClass('close');
+    $('.nav-wrapper').toggleClass('slide-in');
+    $('body').toggleClass('noscroll');
+  });
 
 
 
