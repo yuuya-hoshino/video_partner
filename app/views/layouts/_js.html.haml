@@ -1,0 +1,38 @@
+:javascript 
+  $(".top_members_main").hover(
+    function() {
+      $(this).find('.top_members_main_name_none').addClass('top_members_main_block'); 
+    },
+    function() {
+      $(this).find('.top_members_main_name_none').removeClass('top_members_main_block');
+    }
+  );
+  $(".top_members_main").hover(
+    function() {
+      $(this).find('.top_members_main_name_none_introduction').addClass('top_members_main_block'); 
+    },
+    function() {
+      $(this).find('.top_members_main_name_none_introduction').removeClass('top_members_main_block');
+    }
+  );
+  $(function(){
+    setInterval(function(){
+      $('.subtitle_big').fadeOut(500,function(){$(this).fadeIn(500)});
+    },1000);
+  });
+  $(function() {
+    $('.top_members').slick({
+      infinite: true,
+      dots:true,
+      slidesToShow: 5,
+      slidesToScroll: 5,
+    });
+  });
+  $('.burger-btn').on('click',function(){
+    $('.burger-btn').toggleClass('close');
+    $('.nav-wrapper').toggleClass('slide-in');
+    $('body').toggleClass('noscroll');
+  });
+
+
+

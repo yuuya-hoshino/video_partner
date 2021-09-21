@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where.not(id: current_user.id).order('id DESC').limit(5)
+    @users = User.where.not(id: current_user.id).order('id DESC').limit(15)
     follower = Relationship.where(follower_id: current_user.id).pluck('following_id')
     following = Relationship.where(following_id: current_user.id).pluck('follower_id')
-    @matching_users = User.where(id: follower & following).limit(5)
-    @users_liked_to_me = User.where(id: follower).limit(5)
-    @users_liked_from_me = User.where(id: following).limit(5)
+    @matching_users = User.where(id: follower & following).limit(15)
+    @users_liked_to_me = User.where(id: follower).limit(15)
+    @users_liked_from_me = User.where(id: following).limit(15)
     @follower_count = Relationship.group(:follower_id).count(:following_id)
   end
 
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   end
 
   def logout
+    session[:user_id] = nil
     redirect_to("/")
   end
 end

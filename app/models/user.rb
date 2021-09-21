@@ -7,14 +7,14 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships
   mount_uploader :image_name, ImageUploader
   validates :name, presence: true, length: { maximum: 10 }
-  validates :introduction, length: { maximum: 100 }
+  validates :introduction, length: { maximum: 500 }
   validates :money, numericality: { greater_than_or_equal_to: 1000, less_than_or_equal_to: 100000 }
 
   has_many :following_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followings, through: :following_relationships
   has_many :follower_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
-
+#いいね機能
   def following?(other_user)
     following_relationships.find_by(follower_id: other_user.id)
   end

@@ -9,19 +9,34 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js", :type => "text/javascript"}
+    %link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
   %body
     .header
       = link_to image_tag("icon/IMG_3107.jpg", class:"header_logo"),"/"
-      -if user_signed_in?
-        .header_login
-          = link_to current_user.name, user_path(current_user.id) , class: "header_login_text"
-        .header_index
-          = link_to "ユーザー一覧", users_path , class: "header_signup_text"
-      - else
-        .header_login
-          = link_to "ログイン", new_user_session_path , class: "header_login_text"
-        .header_signup
-          = link_to "新規会員", new_user_registration_path , class: "header_signup_text"
+      .nav-wrapper
+        %nav.header-nav
+          -if user_signed_in?
+            %ul.nav-list
+              %li.nav-item
+                = link_to "マイメニュー", user_path(current_user.id),class: "nav-name"
+              %li.nav-item
+                = link_to "ユーザー一覧", users_path , class: "nav-name"
+              %li.nav-item
+                = link_to "ログアウト", destroy_user_session_path , class: "nav-name"
+          - else
+            %ul.nav-list
+              %li.nav-item
+                = link_to "ログイン", new_user_session_path,class: "nav-name"
+              %li.nav-item
+                = link_to "新規会員", new_user_registration_path , class: "nav-name"
+      .burger-btn
+        %span.bar.bar_top
+        %span.bar.bar_mid
+        %span.bar.bar_bottom
+        
     = yield
     .footer
       .footer_left
@@ -33,4 +48,5 @@
         =link_to image_tag("icon/At the office-pana (1).png",class:"footer_right_icon"),"#"
     .footer_form
       =link_to image_tag("icon/IMG_3090.jpg",class:"footer_form_icon"),"#"
+= render partial: 'layouts/js'
 

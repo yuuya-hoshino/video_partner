@@ -4,10 +4,8 @@
       いつでも任せられる
       %br
       動画編集者をみつけよう
-    %p.top_visual_p
-      ビジネスからプライベート利用まで、動画編集スキルを
-      %br
-      気軽に売り買いできるスキルマーケットです。
+    .top_visual_p
+      ビジネスからプライベート利用まで、動画編集スキルを気軽に売り買いできるスキルマーケットです。
     - if user_signed_in?
     - else
       .btn-wrapper
@@ -46,7 +44,7 @@
     %p 編集してもらえる。
 .top_users
   .top_users_main
-    最新ユーザー
+    ピックアップ
   - if user_signed_in?
     =link_to "もっと見る→",members_index_path, class:"top_users_sabu"
   - else

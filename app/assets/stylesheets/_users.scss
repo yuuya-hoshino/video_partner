@@ -34,6 +34,7 @@
     border: 1px solid #979797;
     height: 320px;
     width: 600px;
+    overflow: hidden;
     &_name{
       font-family: HiraginoSans-W7;
       font-size: 36px;
@@ -51,7 +52,21 @@
       font-size: 18px;
       color: #000000;
       margin: 0 40px;
-      height: 120px;
+      height: 10%;
+      &_new{
+        font-family: HiraginoSans-W7;
+        font-size: 18px;
+        color: #000000;
+        margin: 0 40px;
+        height: 10%;
+        white-space: nowrap;
+        // text-overflow: ellipsis;
+        animation : scroll 15s ease-out infinite;
+        @keyframes scroll {
+          0% { transform: translateX(0)}
+          100% { transform: translateX(-100%)}
+        }
+      }
     }
   }
 }
@@ -94,7 +109,7 @@
       font-family: HiraginoSans-W5;
       font-size: 36px;
       color: #000000;
-      margin: 30px 0;
+      margin: 30px 140px ;
       }
       &_line{
         border: 1px solid #979797;
@@ -106,19 +121,19 @@
         font-family: HiraginoSans-W5;
         font-size: 24px;
         color: #000000;
-        margin: 30px 0;
         white-space: pre-wrap;
+        margin: 30px 140px ;
       }
       .like_count{
         font-family: HiraginoSans-W5;
         font-size: 24px;
         color: #000000;
-        margin: 30px 0;
+        margin: 30px 140px ;
       }
       .other_profile{
         display: flex;
         justify-content: space-around;
-        margin: 0 140px 30px;
+        margin: 30px 140px ;
         &_edit{
           background: rgba(255,0,0,0.57);
           border: 1px solid #979797;
